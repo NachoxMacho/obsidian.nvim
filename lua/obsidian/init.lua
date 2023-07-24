@@ -270,13 +270,13 @@ client.new_note = function(self, title, id, dir, aliases)
   ---@diagnostic disable-next-line: assign-type-mismatch
   local path = base_dir / (new_id .. ".md")
 
-  -- Add title as an alias.
-  ---@type string[]
-  ---@diagnostic disable-next-line: assign-type-mismatch
-  aliases = aliases == nil and {} or aliases
-  if title ~= nil and title:len() > 0 and not obsidian.util.contains(aliases, title) then
-    aliases[#aliases + 1] = title
-  end
+  -- -- Add title as an alias.
+  -- ---@type string[]
+  -- ---@diagnostic disable-next-line: assign-type-mismatch
+  -- aliases = aliases == nil and {} or aliases
+  -- if title ~= nil and title:len() > 0 and not obsidian.util.contains(aliases, title) then
+  --   aliases[#aliases + 1] = title
+  -- end
 
   -- Create Note object and save.
   local note = obsidian.note.new(new_id, aliases, {}, path)
