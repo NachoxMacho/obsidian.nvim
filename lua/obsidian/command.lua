@@ -429,14 +429,7 @@ command.link_new = function(client, data)
   end
   local note = client:new_note(title, nil, vim.fn.expand "%:p:h")
 
-  line = string.sub(line, 1, cscol - 1)
-    .. "[["
-    .. note.id
-    .. "|"
-    .. string.sub(line, cscol, cecol)
-    .. "]]"
-    .. string.sub(line, cecol + 1)
-  vim.api.nvim_buf_set_lines(0, csrow - 1, csrow, false, { line })
+  vim.api.nvim_buf_set_lines(0, csrow - 1, csrow, false, { '-' })
 end
 
 command.link = function(client, data)
